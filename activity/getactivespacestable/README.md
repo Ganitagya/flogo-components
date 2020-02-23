@@ -1,6 +1,6 @@
-# Send SQS Message
+# Get ActiveSpaces
 
-Send a message using Amazon Simple Queue Service (SQS)
+Gets Table data from ActiveSpaces
 
 ## Installation
 
