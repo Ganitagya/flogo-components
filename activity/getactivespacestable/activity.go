@@ -3,9 +3,7 @@ package getactivespacestable
 
 import (
 
-	"github.com/Ganitagya/tibco/tibdg"
-	"log"
-
+	"github.com/Ganitagya/activespacetest"
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 )
@@ -47,41 +45,13 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 
 	log1.Info("Yest")
 	// Get the inputs
+	
+	activespacetest.Print()
+	
 	connectionURL := context.GetInput(ivconnectionURL).(string)
 	tableName := context.GetInput(ivtableName).(string)
 	key := context.GetInput(ivkey).(string)
 
-	connection, err := tibdg.NewConnection(connectionURL, "", nil)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	session, err := connection.NewSession(nil)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	table, err := session.OpenTable(tableName, nil)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	keyRow, err := table.NewRow()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	content := tibdg.RowContent{"key": key}
-	err = keyRow.Set(content)
-	getRow, err := table.Get(keyRow)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	keyRow.Destroy()
-	if getRow != nil {
-		getRow.Destroy()
-	}
 
 	context.SetOutput(ovResult, "getRow")
 	return true, nil
