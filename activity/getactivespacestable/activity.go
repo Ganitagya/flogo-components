@@ -70,7 +70,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 		log.Fatal(err)
 	}
 
-	content := tibdg.RowContent{"key": key}
+	content := tibdg1.RowContent{"key": key}
 	err = keyRow.Set(content)
 	getRow, err := table.Get(keyRow)
 	if err != nil {
