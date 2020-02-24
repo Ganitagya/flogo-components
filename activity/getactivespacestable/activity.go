@@ -82,7 +82,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 		getRow.Destroy()
 	}
 
-	context.SetOutput(ovResult, string(getRow))
+	context.SetOutput(ovResult, getRow.String())
 	return true, nil
 
 }
