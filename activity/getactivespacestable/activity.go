@@ -19,7 +19,7 @@ const (
 )
 
 // log is the default package logger
-var log = logger.GetLogger("activity-getactivespacestable")
+var log1 = logger.GetLogger("activity-getactivespacestable")
 
 // MyActivity is a stub for your Activity implementation
 type MyActivity struct {
@@ -52,29 +52,29 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 
 	connection, err := tibdg.NewConnection(connectionURL, "", nil)
 	if err != nil {
-		log.Fatal(err)
+		log1.Fatal(err)
 	}
 
 	session, err := connection.NewSession(nil)
 	if err != nil {
-		log.Fatal(err)
+		log1.Fatal(err)
 	}
 
 	table, err := session.OpenTable(tableName, nil)
 	if err != nil {
-		log.Fatal(err)
+		log1.Fatal(err)
 	}
 
 	keyRow, err := table.NewRow()
 	if err != nil {
-		log.Fatal(err)
+		log1.Fatal(err)
 	}
 
 	content := tibdg.RowContent{"key": key}
 	err = keyRow.Set(content)
 	getRow, err := table.Get(keyRow)
 	if err != nil {
-		log.Fatal(err)
+		log1.Fatal(err)
 	}
 
 	keyRow.Destroy()
