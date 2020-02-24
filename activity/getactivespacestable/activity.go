@@ -50,7 +50,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 	tableName := context.GetInput(ivtableName).(string)
 	key := context.GetInput(ivkey).(string)
 
-	connection, err := tibdg1.NewConnection1(connectionURL, "", nil)
+	connection, err := tibdg1.NewConnection(connectionURL, "", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
