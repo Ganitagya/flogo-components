@@ -45,7 +45,7 @@ type ExpressionAttribute struct {
 // Eval implements activity.Activity.Eval
 func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 
-	log.Info("Yest")
+	log1.Info("Yest")
 	// Get the inputs
 	connectionURL := context.GetInput(ivconnectionURL).(string)
 	tableName := context.GetInput(ivtableName).(string)
