@@ -3,13 +3,12 @@ package getactivespacestable
 
 import (
 
-	"tibco.com/tibdg"
+	"github.com/Ganitagya/TIBCO.com/tibdg"
 	"fmt"
 	"log"
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
-	"tibco.com/tibdg"
 )
 
 // Constants used by the code to represent the input and outputs of the JSON structure
