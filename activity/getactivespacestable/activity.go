@@ -48,9 +48,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 	
 	activespacetest.Print()
 	
-	connectionURL := context.GetInput(ivconnectionURL).(string)
-	tableName := context.GetInput(ivtableName).(string)
-	key := context.GetInput(ivkey).(string)
+	
 
 
 	context.SetOutput(ovResult, "getRow")
