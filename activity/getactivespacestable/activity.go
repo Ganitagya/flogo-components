@@ -3,7 +3,7 @@ package getactivespacestable
 
 import (
 
-	"github.com/Ganitagya/TIBCO.com/tibdg"
+	"github.com/Ganitagya/tibco/tibdg"
 	"log"
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
