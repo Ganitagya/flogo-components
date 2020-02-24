@@ -4,7 +4,6 @@ package getactivespacestable
 import (
 
 	"github.com/Ganitagya/TIBCO.com/tibdg"
-	"fmt"
 	"log"
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
