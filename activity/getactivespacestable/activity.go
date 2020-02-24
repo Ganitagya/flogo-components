@@ -3,7 +3,7 @@ package getactivespacestable
 
 import (
 
-	tibdg1 "github.com/Ganitagya/TIBCO.com/tibdg"
+	"github.com/Ganitagya/TIBCO.com/tibdg"
 	"log"
 
 	"github.com/TIBCOSoftware/flogo-lib/core/activity"
@@ -50,7 +50,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 	tableName := context.GetInput(ivtableName).(string)
 	key := context.GetInput(ivkey).(string)
 
-	connection, err := tibdg1.NewConnection(connectionURL, "", nil)
+	connection, err := NewConnection(connectionURL, "", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -70,7 +70,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 		log.Fatal(err)
 	}
 
-	content := tibdg1.RowContent{"key": key}
+	content := RowContent{"key": key}
 	err = keyRow.Set(content)
 	getRow, err := table.Get(keyRow)
 	if err != nil {
