@@ -52,29 +52,29 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 
 	connection, err := tibdg.NewConnection(connectionURL, "", nil)
 	if err != nil {
-		log1.Fatal(err)
+		log.Fatal(err)
 	}
 
 	session, err := connection.NewSession(nil)
 	if err != nil {
-		log1.Fatal(err)
+		log.Fatal(err)
 	}
 
 	table, err := session.OpenTable(tableName, nil)
 	if err != nil {
-		log1.Fatal(err)
+		log.Fatal(err)
 	}
 
 	keyRow, err := table.NewRow()
 	if err != nil {
-		log1.Fatal(err)
+		log.Fatal(err)
 	}
 
 	content := tibdg.RowContent{"key": key}
 	err = keyRow.Set(content)
 	getRow, err := table.Get(keyRow)
 	if err != nil {
-		log1.Fatal(err)
+		log.Fatal(err)
 	}
 
 	keyRow.Destroy()
